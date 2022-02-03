@@ -3,6 +3,21 @@ using namespace std;
 #define ll long long
 const int M = 1e9 + 7;
 
+// using modulo
+// ll mod_exponentiation(ll a, ll b)
+// {
+//     if (b == 0)
+//         return 1;
+
+//     ll res = mod_exponentiation(a, b / 2);
+
+//     if (b & 1)
+//         return (a * (res * res) % M) % M;
+
+//     else
+//         return (res * res) % M;
+// }
+
 ll mod_exponentiation(ll a, ll b)
 {
     if (b == 0)
@@ -11,10 +26,10 @@ ll mod_exponentiation(ll a, ll b)
     ll res = mod_exponentiation(a, b / 2);
 
     if (b & 1)
-        return (a * (res * res) % M) % M;
+        return a * (res * res);
 
     else
-        return (res * res) % M;
+        return res * res;
 }
 
 int main()
